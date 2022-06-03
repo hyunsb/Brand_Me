@@ -13,20 +13,6 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <?php   
-            // include "dbconn.php";
-
-            // $id = $_POST['user_id'];
-            // $pw = $_POST['user_pw'];
-            // $name = $_POST['user_name'];
-
-            // $sql = "INSERT INTO userinfo ( user_id, user_pw, user_name ) VALUES ( '$id', '$pw', '$name' )";
-
-            // $result = mysql_query($sql, $connect);
-
-            // mysql_close();
-    ?>
-
     <div class="login-form">
         <div class="logo">
             <h1>Sign Up</h1>
@@ -53,7 +39,6 @@
             <!-- <div class="btn-area">
                 <button type="button" onclick="location.href='main.html'">MAIN</button>
             </div> -->
-
         </form>
 
         <div class="caption">
@@ -63,7 +48,6 @@
         </div>
 
     </div>
-
 
     <script>
         let id = $('#id');
@@ -79,7 +63,5 @@
             }
         });
     </script>
-
-    
 </body>
 </html>

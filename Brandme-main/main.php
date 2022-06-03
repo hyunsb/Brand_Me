@@ -1,7 +1,6 @@
 <?php
-    include "dbconn.php";
-
     session_start();
+    include "dbconn.php";
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +117,11 @@
                             <!-- DB 입력값 변수로 변경할 것 -->
                             <h1 class="home__title">Hi, 
                                 <?php
-                                    echo "{$_SESSION['user_name']}";
+                                    $id = $_SESSION['user_id'];
+                                    $sql = "SELECT user_name FROM userinfo WHERE user_id = '$id'";
+                                    $result = mysql_query($sql, $connect);
+                                    $row = mysql_fetch_array($result);
+                                    echo $row['user_name'];
                                 ?>
                             </h1>
                             <h3 class="home__subtitle">(Backend developer)</h3>
@@ -690,32 +693,32 @@
                         </div>
                     </div>
 
-                    <form action="" class="contact__form grid">
+                    <form action="mail.php" method="post" class="contact__form grid">
                         <div class="contact__inputs grid">
                             <div class="contact__content">
                                 <label for="" class="contact__label">Name</label>
-                                <input type="text" class="contact__input">
+                                <input type="text" name="mail_name" class="contact__input">
                             </div>
 
                             <div class="contact__content">
                                 <label for="" class="contact__label">Email</label>
-                                <input type="email" class="contact__input">
+                                <input type="email" name="mail_email" class="contact__input">
                             </div>
                         </div>
                         <div class="contact__content">
-                            <label for="" class="contact__label">Project</label>
-                            <input type="text" class="contact__input">
+                            <label for="" class="contact__label">Project Title</label>
+                            <input type="text" name="mail_title" class="contact__input">
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label">Message</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                            <textarea name="mail_message" id="" cols="0" rows="7" class="contact__input"></textarea>
                         </div>
 
                         <div>
-                            <a href="#" class="button button--flex">
+                            <input type="submit" href="mail.php" class="button button--flex">
                                 Send Message
                                 <i class="uil uil-message button__icon"></i>
-                            </a>
+                            </input>
                         </div>
                     </form>
                 </div>

@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "dbconn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="ko">
     <head>
@@ -13,14 +18,14 @@
         <!-- CSS -->
         <link rel="stylesheet" href="./css/setting.css">
     </head>
-
+    
     <body>
+        <form action="user_setting_check.php" method="post" >
         <!-- ===========================//// HEADER ////================================= -->
         <header class="header" id="header">
             <!-- ===========================//// NAV ////================================= -->
             <nav class="nav container">
                 <a href="main.php" class="nav__logo">Brand Me.</a>
-                
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list grid">
                         <li class="nav__item">
@@ -54,9 +59,9 @@
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="main.php" class="nav__link setting">
+                            <a href="user_setting_check.php" class="nav__link setting">
                                 <!-- DB user ID값으로 변경 -->
-                                <i class="uil uil-user nav__icon"></i> Done!
+                                <i class="uil uil-user nav__icon"></i> <input type="submit"></input>
                             </a>
                         </li>
                     </ul>
@@ -82,25 +87,29 @@
                 <h2 class="section__title">Home</h2>
                 <span class="section__subtitle">hello</span>
 
+                
                 <div class="home__container container">
+                    <!-- <form method ="post" action="user_setting_check.php" class="skill__home grid"> -->
                     <div class="home__userinfo grid">
                         <div class="home__username home__items">
                             <div class="contact__inputs">
                                 <label for="" class="contact__label"><i class="uil uil-user"></i> Name</label>
-                                <input type="text" name ="home_name" class="contact__input">
+                                <input type="text" name ="user_name" class="contact__input">
                             </div>
                         </div>
                         <div class="home__useroccupation home__items">
                             <div class="contact__inputs">
                                 <label for="" class="contact__label"><i class="uil uil-bag"></i> occupation</label>
-                                <input type="text" name ="home_occupation" class="contact__input">
+                                <input type="text" name ="occupation" class="contact__input">
                             </div>
                         </div>
                     </div>
                     <div class="home__infomation home__items">
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> infomation</label>
-                            <textarea name="home_infomation" id="" cols="0" rows="1" class="contact__input"></textarea>
+                            
+                            <!--  안들어감    -->
+                            <textarea name="home_information" id="" cols="0" rows="1" class="contact__input"></textarea>
                         </div>
                     </div>
 
@@ -110,23 +119,24 @@
                                 <i class="uil uil-github-alt"></i>
                                 <span class="span__flex">&nbsp;https://github.com/</span>
                             </div>
-                            <input type="text" name ="home_github" class="input__link" placeholder="git UserName (ex.hyunsb)">
+                            <input type="text" name ="git" class="input__link" placeholder="git UserName (ex.hyunsb)">
                         </div>
                         <div class="homelink__inputs">
                             <div class="span__item">
                                 <i class="uil uil-instagram"></i>
                                 <span class="span__flex">&nbsp;https://instagram.com/</span>
                             </div>
-                            <input type="text" name ="home_instagram" class="input__link" placeholder="instagram ID">
+                            <input type="text" name ="instagram" class="input__link" placeholder="instagram ID">
                         </div>
                         <div class="homelink__inputs">
                             <div class="span__item">
                                 <i class="uil uil-web-grid"></i>
                                 <span class="span__flex">&nbsp;https://notion.com/</span>
                             </div>
-                            <input type="text" name ="home_notion" class="input__link">
+                            <input type="text" name ="notion" class="input__link">
                         </div>                        
                     </div>
+                    <!-- </form> -->
                 </div>
             </section>
 
@@ -135,12 +145,15 @@
                 <h2 class="section__title">About Me</h2>
                 <span class="section__subtitle">My introduction</span>
 
+                <!-- <form method ="post" action="user_setting_check.php" class="about__form grid"> -->
                 <div class="about__container container grid">
                     <div class="home__userinfo">
                         <div class="home__infomation home__items">
                             <div class="contact__inputs">
-                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> infomation</label>
-                                <textarea name="about_infomation" id="" cols="0" rows="1" class="contact__input"></textarea>
+                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> information</label>
+                                
+                                <!--  안들어감    -->
+                                <textarea name="about_information" id="" cols="0" rows="1" class="contact__input"></textarea>
                             </div>
                         </div>
 
@@ -160,6 +173,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- </form> -->
             </section>
 
 
@@ -169,55 +183,56 @@
                 <span class="section__subtitle">My technical level</span>
 
                 <div class="contact__container container grid">
-                    <form action="" class="skills__form grid">
+                    <!-- <form method ="post" action="user_setting_check.php" class="skills__form grid"> -->
                         <h1 class="skills__title"><i class="uil uil-brackets-curly skills__icon"></i> Frontend Developer</h1>
                         <div class="skills__sub grid">
                             <span>skills</span>
                             <span>%</span>
                         </div>
+                        <!--  skills는 전체 다 안들어감    -->
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_front_name_1" type="text" class="skills__input" placeholder="react">
+                                <input name ="skills_front_1" type="text" class="skills__input" placeholder="react">
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_front_num_1" type="text" class="skills__input" placeholder="65">
+                                <input name ="skills_front_per_1" type="text" class="skills__input" placeholder="65">
                             </div>
                         </div>
 
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_front_name_2" type="text" class="skills__input" >
+                                <input name ="skills_front_2" type="text" class="skills__input" >
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_front_num_2" type="text" class="skills__input">
+                                <input name ="skills_front_per_2" type="text" class="skills__input">
                             </div>
                         </div> 
 
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_front_name_3" type="text" class="skills__input">
+                                <input name ="skills_front_3" type="text" class="skills__input">
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_front_num_3" type="text" class="skills__input">
+                                <input name ="skills_front_per_3" type="text" class="skills__input">
                             </div>
                         </div> 
 
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_front_name_4" type="text" class="skills__input">
+                                <input name ="skills_front_4" type="text" class="skills__input">
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_front_name_4" type="text" class="skills__input">
+                                <input name ="skills_front_per_4" type="text" class="skills__input">
                             </div>
                         </div> 
 
-                    </form>
+                    <!-- </form> -->
 
-                    <form action="" class="contact__form grid">
+                    <!-- <form method ="post" action="user_setting_check.php" class="contact__form grid"> -->
                         <h1 class="skills__title"><i class="uil uil-server-network skills__icon"></i> Backend Developer</h1>
                         <div class="skills__sub grid">
                             <span>skills</span>
@@ -225,44 +240,44 @@
                         </div>
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_back_name_1" type="text" class="skills__input" placeholder="nodejs">
+                                <input name ="skills_back_1" type="text" class="skills__input" placeholder="nodejs">
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_back_num_1" type="text" class="skills__input" placeholder="85">
+                                <input name ="skills_back_per_1" type="text" class="skills__input" placeholder="85">
                             </div>
                         </div>
 
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_back_name_2" type="text" class="skills__input" >
+                                <input name ="skills_back_2" type="text" class="skills__input" >
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_back_num_2" type="text" class="skills__input">
-                            </div>
-                        </div> 
-
-                        <div class="skills__skill grid">
-                            <div class="skills__inputs">
-                                <input name ="skills_back_name_3" type="text" class="skills__input">
-                            </div>
-
-                            <div class="skills__inputs">
-                                <input name ="skills_back_num_3" type="text" class="skills__input">
+                                <input name ="skills_back_per_2" type="text" class="skills__input">
                             </div>
                         </div> 
 
                         <div class="skills__skill grid">
                             <div class="skills__inputs">
-                                <input name ="skills_back_name_4" type="text" class="skills__input">
+                                <input name ="skills_back_3" type="text" class="skills__input">
                             </div>
 
                             <div class="skills__inputs">
-                                <input name ="skills_back_num_4" type="text" class="skills__input">
+                                <input name ="skills_back_per_3" type="text" class="skills__input">
+                            </div>
+                        </div> 
+
+                        <div class="skills__skill grid">
+                            <div class="skills__inputs">
+                                <input name ="skills_back_4" type="text" class="skills__input">
+                            </div>
+
+                            <div class="skills__inputs">
+                                <input name ="skills_back_per_4" type="text" class="skills__input">
                             </div>
                         </div>
-                    </form>
+                    <!-- </form> -->
                 </div>
             </section>
 
@@ -272,6 +287,7 @@
                 <h2 class="section__title">Qualification</h2>
                 <span class="section__subtitle">My persnal journey</span>
 
+                <!-- <form method ="post" action="user_setting_check.php" class="qualification__form grid"> -->
                 <div class="qualification__container container">
                     <div class="qualification__tabs">
                         <div class="qualification__button button--flex qualification__active" data-target='#education'>
@@ -284,6 +300,8 @@
                             Work
                         </div>
                     </div>
+                </div>
+                <!-- </form> -->
             </section>
 
             <!-- ===========================//// SERVICES ////================================= -->
@@ -292,12 +310,19 @@
                 <h2 class="section__title">Services</h2>
                 <span class="section__subtitle">What i offer</span>
 
+                <!-- <form method ="post" action="user_setting_check.php" class="services__form grid">
+
+                </form> -->
             </section>
 
-            <!-- ===========================//// PROTFOLIO ////================================= -->
+            <!-- ===========================//// PORTFOLIO ////================================= -->
             <section class="portfolio section" id="portfolio">
                 <h2 class="section__title">Portfolio</h2>
                 <span class="section__subtitle">Most recent work</span>
+
+                <!-- <form method ="post" action="user_setting_check.php" class="portfolio__form grid">
+
+                </form> -->
 
             </section>
 
@@ -307,22 +332,23 @@
                 <span class="section__subtitle">Get in Touch</span>
 
                 <div class="contact__container container">
-                    <form action="" class="contact__form grid">
+                    <!--  phone, email, location 다 안들어감    -->
+                    <!-- <form method ="post" action="user_setting_check.php" class="contact__form grid"> -->
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-phone"></i> Phone Number</label>
-                            <input name="contact_phone" type="text" class="contact__input">
+                            <input name="phone" type="text" class="contact__input">
                         </div>
 
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-envelope"></i> Email</label>
-                            <input name="contact_email" type="text" class="contact__input">
+                            <input name="email" type="text" class="contact__input">
                         </div>
 
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-map-marker"></i> Location</label>
-                            <input name="contact_location" type="text" class="contact__input">
+                            <input name="location" type="text" class="contact__input">
                         </div>
-                    </form>
+                    <!-- </form> -->
                 </div>
             </section>
 
@@ -393,5 +419,7 @@
                 keyboard: true,
             });            
         </script>
+        </form>
     </body>
+    
 </html>
