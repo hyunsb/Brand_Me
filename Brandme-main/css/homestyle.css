@@ -99,7 +99,13 @@ body {
     color: var(--text-color);
     /* background: url("../img/section1_img2.png") center; */
     /* background-size: cover; */
-}
+
+    -ms-overflow-style: none;
+  }
+  
+ ::-webkit-scrollbar {
+   display: none;
+ }
 
 h1, h2, h3, h4 {
     color: var(--title-color);
@@ -424,15 +430,19 @@ img {
   .footer_img {
     position: absolute;
     z-index: -1;
-    right: 100px;
-    bottom: 40px;
+    right: 500px;
+    bottom: 20px;
   }
 
   .footer_img_Area {
     position: relative;
     background-color: #2B0D4B;
+
+    border-radius: 100px 0 0 0;
+
+
     width: 2000px;
-    height: 40px;
+    height: 150px;
   }
 
   /*==================== MEDIA QUERIES ====================*/
