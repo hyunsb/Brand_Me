@@ -288,7 +288,7 @@ img {
     animation: fadein_delay 3s ease-in-out;
 }
 
-.Content_btn_Area > button {
+.Content_btn_Area > a {
     font-size: 25px;
     padding: .5rem 10rem;
     border-radius: 15px;
