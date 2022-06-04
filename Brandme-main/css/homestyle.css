@@ -313,7 +313,7 @@ img {
 
 .Content_section1 {
     min-height: 100vh;
-    border-radius: 100px 0 0 0 ;
+    border-radius: 100px 0 100px 0;
     padding-top: 10rem;
     background-color: #fff;
 
