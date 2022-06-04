@@ -23,7 +23,8 @@
             <a href="home.php" class="nav__logo">Brand Me.</a>
             <div class="nav_menu">
                 <a href="binary.php" class="nav_items">Portfolio</a>
-                <a href="#" class="nav_items">Board</a>
+                <!-- php로 변경 -->
+                <a href="Board.html" class="nav_items">Board</a>
                 <a href="#" class="nav_items">Contact Us</a>
                 <a href="#" class="nav_items">MyPage</a>
 

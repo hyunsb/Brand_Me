@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 컬러, 폰트 변수 setting */
+:root {
+    --header-height: 3rem;
+
+    /* 사용자 값에 따라 변경 가능하도록 */
+
+    /* HSL 색삭표 참고 사이트
+    https://www.w3schools.com/colors/colors_hsl.asp
+    purple 250, green 142, blue 230 pink 340 */
+
+    --hue-color: 250;
+
+    /* -----------------HSL color 변수------------------ */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #FFF;
+
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /* --------------------Font size 변수-------------------- */
+    
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+
+    /* Font weight */
+   
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* --------------------Margin 변수-------------------- */
+   
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* -------------------z-index 변수-------------------- */
+   
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+
+/* 반응형 스크린 기본 setting */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+  }
+}
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    /* 스크롤 이동 부드럽게 */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* margin: 0 0 var(--header-height) 0; */
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    /* background: url("../img/section1_img2.png") center; */
+    /* background-size: cover; */
+
+    -ms-overflow-style: none;
+  }
+  
+ ::-webkit-scrollbar {
+   display: none;
+ }
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    /* 리스트 스타일 없음 */
+    list-style: none;
+}
+
+a {
+    /* a 태그 문자 밑줄 삭제 */
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.Board_Container {
+    background-color: #2b0d4b60;
+    min-height: 100vh;        
+}
+
+.Board_Search_Area {
+    position: relative;
+}
+
+.serchImg {
+    position: absolute;
+    z-index: 3;
+
+    width: 500px;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.imgBubble {
+    position: absolute;
+    left: 300px;
+}
+
+.imgBubble2 {
+    position: absolute;
+    top: 500px;
+    left: 800px;
+}
+
+.Search_SearchBar {
+    position: absolute;
+    z-index: 3;
+
+    width: 55%;
+    height: 80px;
+    background-color: #FFF;
+
+    border-radius: 50px;
+    top : 200px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.Board_Content_Container {
+
+    position: absolute;
+    z-index: 5;
+    margin-top: 160px;
+    width: 100%;
+
+    background-color: #2B0D4B;
+    border-radius: 95px 95px 0 0 ;
+    padding-top: 5px;
+}
+
+.Board_Content_Area {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+
+    border-radius: 100px 100px 0 0 ;
+}
+
+
+
+
+/* 삭제할 것 */
+.Board_Content_Area > h1 {
+    text-align: center;
+}
+
+.Search_SearchBar > h1 {
+    text-align: center;
+}
