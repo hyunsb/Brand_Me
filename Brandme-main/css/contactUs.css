@@ -1,0 +1,40 @@
+.ContactUs_Container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.ContactImg {
+    width: 50%;
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+}
+
+.ContactMail {
+    position: absolute;
+
+    bottom: 200px;
+    right: 470px;
+    
+    animation: up-down 2.0s infinite ease-in-out alternate;
+    transform: translate(0px, 0px);
+}
+
+.ContacUs_Content_Container {
+    position: absolute;
+    z-index: 2;
+
+    top: 350px;
+    left: 100px;
+
+    width: 40vw;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.038);
+}
+
+.ContactBg {
+    position: absolute;
+    left: -900px;
+}
