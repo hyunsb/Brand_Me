@@ -226,7 +226,7 @@ img {
     display: flex;
     justify-content: center;
     /* opacity: 0; */
-    animation: fadein 1s ease-in-out;
+    animation: fadein_delay 2s ease-in-out;
     
 }
 
@@ -251,10 +251,41 @@ img {
   }
 }
 
+@keyframes fadein_delay {
+    0% {
+      opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fadein_delay2 {
+    0% {
+      opacity: 0;
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+
 .Content_btn_Area {
     margin-top: 5rem;
     display: flex;
     justify-content: center;
+
+    animation: fadein_delay 3s ease-in-out;
 }
 
 .Content_btn_Area > button {
