@@ -2,15 +2,8 @@
             session_start();
             include "dbconn.php";   // db 연결
 
-            mysql_query($conn, "set session character_set_connection=utf8;");
-            mysql_query($conn, "set session character_set_results=utf8;");
-            mysql_query($conn, "set session character_set_client=utf8;");
-
             $user_id = $_SESSION['user_id'];
-            echo "
-                user_id: {$user_id} <br>
-            ";
-
+        
             // home
             $home_name = $_POST['user_name'];
             $home_occupation = $_POST['occupation'];
@@ -19,21 +12,8 @@
             $notion = $_POST['notion'];
             $instagram = $_POST['instagram'];
 
-            echo "
-                name: $home_name <br>
-                occu: $home_occupation <br>
-                home_info: $home_information <br>
-                git: $git <br>
-                notion: $notion <br>
-                insta: $instagram <br>
-            ";
-
             //about 부분 추가해야함.
             $about_information = $_POST['about_information'];
-
-            echo "
-                about_info: $about_information <br>
-            ";
 
             //skills frontend
             $skills_front_1 = $_POST['skills_front_1'];
@@ -45,11 +25,6 @@
             $skills_front_per_3 = $_POST['skills_front_per_3'];
             $skills_front_per_4 = $_POST['skills_front_per_4'];
 
-            echo "
-                skills_front: $skills_front_1, $skills_front_2, $skills_front_3, $skills_front_4 <br>
-                skills_front_per: $skills_front_per_1, $skills_front_per_2, $skills_front_per_3, $skills_front_per_4 <br>
-            ";
-
             //skills backend
             $skills_back_1 = $_POST['skills_back_1'];
             $skills_back_2 = $_POST['skills_back_2'];
@@ -60,38 +35,112 @@
             $skills_back_per_3 = $_POST['skills_back_per_3'];
             $skills_back_per_4 = $_POST['skills_back_per_4'];
 
-            echo "
-                skills_back: $skills_back_1, $skills_back_2, $skills_back_3, $skills_back_4 <br>
-                skills_back_per: $skills_back_per_1, $skills_back_per_2, $skills_back_per_3, $skills_back_per_4 <br>
-            ";
+            // services
+            $services_front_1 = $_POST['services_front_1'];
+            $services_front_2 = $_POST['services_front_2'];
+            $services_front_3 = $_POST['services_front_3'];
+            $services_front_4 = $_POST['services_front_4'];
+            $services_back_1 = $_POST['services_back_1'];
+            $services_back_2 = $_POST['services_back_2'];
+            $services_back_3 = $_POST['services_back_3'];
+            $services_back_4 = $_POST['services_back_4'];
 
             //contact
             $phone = $_POST['phone'];
             $email = $_POST['email'];
             $location = $_POST['location'];
 
-            echo "
-                phone: $phone <br>
-                email: $email <br>
-                location: $location <br>
-            ";
+            $check = "SELECT * FROM home WHERE user_id = '$user_id'";
+            $check_result = mysql_query($check, $connect);
+            $check_num = mysql_num_rows($check_result);
+
+            if (!$check_num) {
+
+                // home 정보 입력
+                $insert_home = "INSERT INTO home (user_id, user_name, occupation, home_information, git, notion, instagram)
+                                    VALUES ('$user_id', '$home_name', '$home_occupation', '$home_information', '$git', '$notion', '$instagram')";
+                $insert_home_result = mysql_query($insert_home, $connect);
+
+                // about 정보 입력
+                $insert_about = "INSERT INTO about (user_id, about_img, about_information, experience, project, worked)
+                                    VALUES ('$user_id', '$about_img', '$about_information', '$experience', '$project', '$worked')";
+                $insert_about_result = mysql_query($insert_about, $connect);
+
+                // skills_frontend 정보 입력
+                $insert_frontend = "INSERT INTO skills_frontend (user_id, skills_front_1, skills_front_2, skills_front_3, skills_front_4, 
+                                        skills_front_per_1, skills_front_per_2, skills_front_per_3, skills_front_per_4)
+                                    VALUES ('$user_id', '$skills_front_1', '$skills_front_2', '$skills_front_3', '$skills_front_4',
+                                        '$skills_front_per_1', '$skills_front_per_2', '$skills_front_per_3', '$skills_front_per_4')";
+                $insert_frontend_result = mysql_query($insert_frontend, $connect);
+
+                // skills_backend 정보 입력
+                $insert_backend = "INSERT INTO skills_backend (user_id, skills_back_1, skills_back_2, skills_back_3, skills_back_4, 
+                                        skills_back_per_1, skills_back_per_2, skills_back_per_3, skills_back_per_4)
+                                    VALUES ('$user_id', '$skills_back_1', '$skills_back_2', '$skills_back_3', '$skills_back_4',
+                                        '$skills_back_per_1', '$skills_back_per_2', '$skills_back_per_3', '$skills_back_per_4')";
+                $insert_backend_result = mysql_query($insert_backend, $connect);
+
+                //services 정보 입력
+                $insert_services = "INSERT INTO services (user_id, services_front_1, services_front_2, services_front_3, services_front_4,
+                                        services_back_1, services_back_2, services_back_3, services_back_4)
+                                    VALUES ('$user_id', '$services_front_1', '$services_front_2', '$services_front_3', '$services_front_4',
+                                        '$services_back_1', '$services_back_2', '$services_back_3', '$services_back_4')";
+                $insert_services_result = mysql_query($insert_services, $connect);
+
+                // contact 정보 입력
+                $insert_contact = "INSERT INTO contact (user_id, phone, email, location)
+                                        VALUES ('$user_id', '$phone', '$email', '$location')";
+                $insert_contact_result = mysql_query($insert_contact, $connect);
 
 
-            // $sql = "SELECT * FROM userinfo WHERE user_id = '$id'";
-            // $result = mysql_query($sql, $connect);
-            // $num_match = mysql_num_rows($result);
+                echo ("
+                    <script>                            
+                        window.alert('정보를 입력하였습니다.')
+                        location.replace('main.php')
+                    </script>
+                    ");
+        
+            } else {
 
-            
-            
+                // home 정보 수정
+                $update_home = "UPDATE home SET user_id = '$user_id', user_name = '$home_name', occupation = '$home_occupation',
+                                    home_information = '$home_information', git = '$git', notion = '$notion', instagram = '$instagram' WHERE user_id = '$user_id'";
+                $update_home_result = mysql_query($update_home, $connect);
 
-            
-            // echo ("
-            //     <script>                            
-            //         window.alert('회원가입이 성공하였습니다.')
-            //         location.replace('main.php')
-            //     </script>
-            //     ");
-            
-   
+                // about 정보 수정
+                $update_about = "UPDATE about SET user_id = '$user_id', about_img = '$about_img', about_information = '$about_information',
+                                    experience = '$experience', project = '$project', worked = '$worked'";
+                $update_about_result = mysql_query($update_about, $connect);
+                
+
+                // skills_frontend 정보 수정
+                $update_skills_frontend = "UPDATE skills_frontend SET user_id = '$user_id', skills_front_1 = '$skills_front_1', skills_front_2 = '$skills_front_2', skills_front_3 = '$skills_front_3', skills_front_4 = '$skills_front_4',
+                                                skills_front_per_1 = '$skills_front_per_1', skills_front_per_2= '$skills_front_per_2',  skills_front_per_3 = '$skills_front_per_3', skills_front_per_4 = '$skills_front_per_4'";
+                $update_skills_frontend_result = mysql_query($update_skills_frontend, $connect);
+
+                // skills_backend 정보 수정
+                $update_skills_backend = "UPDATE skills_backend SET user_id = '$user_id', skills_back_1 = '$skills_back_1', skills_back_2 = '$skills_back_2', skills_back_3 = '$skills_back_3', skills_back_4 = '$skills_back_4',
+                                                skills_back_per_1 = '$skills_back_per_1', skills_back_per_2= '$skills_back_per_2',  skills_back_per_3 = '$skills_back_per_3', skills_back_per_4 = '$skills_back_per_4'";
+                $update_skills_backend_result = mysql_query($update_skills_backend, $connect);
+
+                // services 정보 수정
+                $update_services = "UPDATE services SET user_id = '$user_id', services_front_1 = '$services_front_1', services_front_2 = '$services_front_2', services_front_3 = '$services_front_3', services_front_4 = '$services_front_4',
+                                        services_back_1 = '$services_back_1', services_back_2 = '$services_back_2', services_back_3 = '$services_back_3', services_back_4 = '$services_back_4'";
+                $update_services_result = mysql_query($update_services, $connect);
+
+                // contact 정보 수정
+                $update_contact = "UPDATE contact SET user_id = '$user_id', phone = '$phone', email = '$email', location = '$location' WHERE user_id = '$user_id'";
+                $update_contact_result = mysql_query($update_contact, $connect);
+
+
+
+                echo ("
+                    <script>                            
+                        window.alert('정보를 수정하였습니다.')
+                        location.replace('main.php')
+                    </script>
+                    ");
+            }
+
             mysql_close();
         ?>

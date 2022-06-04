@@ -1,5 +1,4 @@
 create table qualification_work (
-	user_num int auto_increment,
 	user_id varchar(10),
 	work1 varchar(20),
 	work1_location varchar(30),
@@ -10,5 +9,5 @@ create table qualification_work (
 	work3 varchar(20),
 	work3_location varchar(30),
 	work3_period int,
-	primary key(user_num)
+	primary key('user_id')
 );

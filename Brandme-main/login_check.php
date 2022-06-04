@@ -1,5 +1,5 @@
 <?php
-        session_start();
+            session_start();
             include "dbconn.php";   // db 연결
 
             $id = $_POST['id'];
@@ -42,7 +42,7 @@
                 
                     echo "
                         <script>
-                            location.replace('main.php');
+                            location.replace('home.php');
                         </script>
                     ";
                 }

@@ -1,5 +1,4 @@
 create table qualification_edu (
-	user_num int auto_increment,
 	user_id varchar(10),
 	edu1 varchar(20),
 	edu1_location varchar(30),
@@ -10,5 +9,5 @@ create table qualification_edu (
 	edu3 varchar(20),
 	edu3_location varchar(30),
 	edu3_period int,
-	primary key(user_num)
+	primary key('user_id')
 );

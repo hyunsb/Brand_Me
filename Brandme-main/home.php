@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "dbconn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,31 +11,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brand Me.</title>
 
+        <!-- CSS -->
+        <link rel="stylesheet" href="./css/homestyle.css">
+
     <!-- UNICONS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/homestyle.css">
-
 </head>
 <body>
     <div class="main_Header_Container">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Brand Me.</a>
+            <a href="home.php" class="nav__logo">Brand Me.</a>
             <div class="nav_menu">
-                <a href="#" class="nav_items">Portfolio</a>
+                <a href="binary.php" class="nav_items">Portfolio</a>
                 <a href="#" class="nav_items">Board</a>
                 <a href="#" class="nav_items">Contact Us</a>
                 <a href="#" class="nav_items">MyPage</a>
 
-               <!-- if (session.id !== 'null') {
-                        LogIn
+                <?php
+                    if (!isset($_SESSION['user_id'])) {
+                        echo "
+                            <div class='nav_btn'>
+                                <a href='login.php' class='nav_items'>Login</a>
+                            </div>
+                        ";
                     } else {
-                        LogOut
-                    }}-->
-                <div class="nav_btn">
-                    <a href="login.php" class="nav_items">Login</a>
-                </div>
+                        echo "
+                            <div class='nav_btn'>
+                                <a href='logout.php' class='nav_items'>Logout</a>
+                            </div>
+                        ";
+                    }
+                ?>
             </div>
         </nav>
     </div>
@@ -66,27 +77,9 @@
                     <h1>{ 개발자 }</h1>
                     <h1>포트폴리오를 제작하세요!</h1>
                 </div>
-                <!-- <div class="Content_Img_Area swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="./img/pre1.png" class="Content_Img">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="./img/pre2.png" class="Content_Img">
-                        </div>
-
-                        <div class="swiper-slide">
-                            <img src="./img/pre3.png" class="Content_Img">
-                        </div>
-                    </div>
-                </div> -->
-
             </div>
         </div>
     </div>
-
-
 
     <footer class="footer">
         <div class="footer__bg">
@@ -95,18 +88,6 @@
                     <h1 class="footer__title">Brand Me.</h1>
                     <span class="footer__subtitle">Making Your Portfolio</span>
                 </div>
-
-                <!-- <ul class="footer__links">
-                    <li>
-                        <a href="#services" class="footer__link">Services</a>
-                    </li>
-                    <li>
-                        <a href="#portfolio" class="footer__link">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#contact" class="footer__link">Conatctme</a>
-                    </li>
-                </ul> -->
 
                 <div class="footer__socials">
                     <a href="https://www.facebook.com/" target="_blank" class="footer__social">

@@ -11,6 +11,9 @@
     </head>
 
     <body>
+        <img src="./img/section1_img2.png" class="section1_img2"/>
+        <img src="./img/section1_img2.png" class="section1_img3"/>
+        <div class="purple_Area"></div>
         <div class="login-form">
             <div class="logo">
                 <h1>Brand Me.</h1>
@@ -40,7 +43,7 @@
                     <a href="signup.php">Sign Up</a>
                 </div>
                 <div class="caption_items">
-                    <a href="main_empty.html">Forgot Password?</a>
+                    <a href="forgot.html">Forgot Password?</a>
                 </div>
             </div>
         </div>

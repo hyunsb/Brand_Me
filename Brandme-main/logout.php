@@ -5,7 +5,7 @@
 ?>
 
 <script>
-    location.replace('login.php');
+    location.replace('home.php');
 </script>
 
 
