@@ -47,12 +47,14 @@
         </nav>
     </div>
     <div class="main_home_Container">
+        
         <div class="section_img1">
             <img src="./img/section1_img2.png"/>
         </div>
         <div class="section_img2">
             <img src="./img/bubble_left2.svg" alt class="imgBubble"/>
             <img src="./img/bubble_right2.svg" alt class="imgBubble2"/>
+            <!-- <img src="./img/section1_img2R.png" alt class="footer_img"/> -->
             <div class="img_area">
                 <img src="./img/section1_img.png" alt class="imgPeople"/>
             </div>
@@ -105,9 +107,10 @@
             <p class="footer__copy">&#169; Brand ME. All right reserved</p>
         </div>
     </footer>
-    <div class="footer_img_Area">
+
+    <!-- <div class="footer_img_Area">
         <img src="./img/section1_img2R.png" alt class="footer_img"/>
-    </div>
+    </div> -->
 
     <script src="./js/swiper-bundle.min.js"></script>
 </body>

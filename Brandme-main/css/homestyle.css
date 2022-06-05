@@ -429,12 +429,13 @@ img {
 
   .footer_img {
     position: absolute;
-    z-index: -1;
-    right: 500px;
-    bottom: 20px;
+    /* z-index: -1; */
+    /* z-index: 0; */
+    left: 0;
+    top: 500px;
   }
 
-  .footer_img_Area {
+  /* .footer_img_Area {
     position: relative;
     background-color: #2B0D4B;
 
@@ -443,7 +444,7 @@ img {
 
     width: 2000px;
     height: 150px;
-  }
+  } */
 
   /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
