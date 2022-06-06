@@ -1,7 +1,8 @@
 .mypage_container {
     position: relative;
     /* background-color: #2b0d4b60; */
-    background: url("../img/bg12.jpg") no-repeat center;
+    /* background: url("../img/bg12.jpg") no-repeat center; */
+    background-color: #2b0d4b60;
 
     overflow: hidden;
 
@@ -22,6 +23,16 @@
     left: 700px;
 }
 
+.mypage_container > .imgBubble2 {
+    right: 0;
+    top: 100px;
+}
+
+.mypage_container > .imgBubble {
+    left: 0;
+    bottom: 50px;
+}
+
 .mypage_main_Container {
     position: absolute;
 
@@ -33,8 +44,45 @@
     z-index: 2;
     bottom: 50%;
     left: 50%;
-    transform: translate(-50%, 55%);
+    transform: translate(-50%, 56%);
 
     width: 80%;
     height: 80%;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 0.015fr 2fr;
+    column-gap: .5rem;
+}
+
+.mypage_UserInfo_Area {
+    /* background-color: rgb(255, 255, 255); */
+
+    display: grid;
+    grid-template-rows: 1fr .7fr;
+   justify-items: center;
+}
+
+.mtpage_border_Area {
+    background-color: #2B0D4B;
+    border-radius: 2px;
+}
+
+.matpage_UserContent_Area {
+    border-radius: 20px;
+    background-color: rgba(43, 13, 75, 0.268);
+}
+
+
+.UserInfo_Area_Img {
+    margin-top: 1rem;
+    width: 80%;
+    height: fit-content;
+}
+
+.UserInfo_Area_Info {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 13, 75, 0.268);
 }
