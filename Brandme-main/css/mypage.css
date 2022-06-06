@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .mypage_container {
     position: relative;
     /* background-color: #2b0d4b60; */
@@ -63,12 +76,18 @@
    justify-items: center;
 }
 
-.mtpage_border_Area {
+.mypage_border_Area {
     background-color: #2B0D4B;
     border-radius: 2px;
 }
 
-.matpage_UserContent_Area {
+.mypage_UserContent_Area {
+    padding: 1rem;
+}
+
+.UserContent_Container {
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
     background-color: rgba(43, 13, 75, 0.268);
 }
@@ -81,8 +100,42 @@
 }
 
 .UserInfo_Area_Info {
-    border-radius: 20px;
     width: 100%;
     height: 100%;
+    padding: 1rem;
+    /* background-color: rgba(43, 13, 75, 0.268); */
+}
+
+.Info_Container {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
     background-color: rgba(43, 13, 75, 0.268);
+
+    padding: 1rem 1rem;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.userInfo_items {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    /* padding: 0 1rem; */
+    text-align: center;
+    padding: .5rem .5rem;
+
+    width: 100%;
+    height: 100%;
+    
+    font-family: GmarketSansMedium;
+}
+
+.Info_Container > .userInfo_items:not(:last-child) {
+    border-bottom: 1px dashed #2B0D4B;
+}
+
+.userInfo_items > h2:first-child {
+    color: rgb(74, 74, 74);
 }
