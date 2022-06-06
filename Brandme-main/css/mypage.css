@@ -1,0 +1,40 @@
+.mypage_container {
+    position: relative;
+    /* background-color: #2b0d4b60; */
+    background: url("../img/bg12.jpg") no-repeat center;
+
+    overflow: hidden;
+
+    height: 100vh;
+    width: 100%;
+}
+
+.myPageBg2 {
+    position: absolute;
+    left: -600px;
+}
+
+.myPageBg1 {
+    position: absolute;
+
+    z-index: 1;
+    bottom: -80px;
+    left: 700px;
+}
+
+.mypage_main_Container {
+    position: absolute;
+
+    background-color: #fff;
+    border-radius: 50px;
+    border: 5px solid #2B0D4B;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.303);
+
+    z-index: 2;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 55%);
+
+    width: 80%;
+    height: 80%;
+}
