@@ -349,6 +349,13 @@ img {
   border-radius: 5px;
 }
 
+.home__useroccupation {
+  height: 100%;
+}
+
+.home__useroccupation > .contact__inputs {
+  height: 100%;
+}
 
 /* ================== ABOUT ====================== */
 .about__container {

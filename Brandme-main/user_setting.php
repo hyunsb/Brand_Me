@@ -94,7 +94,7 @@
                         </li>
                         <li class="nav__item">
                             <a href="user_setting_check.php" class="nav__link setting">
-                                <input type="submit">Done</input>
+                                <input type="submit" text>Done</input>
                             </a>
                         </li>
                     </ul>
@@ -131,7 +131,12 @@
                         <div class="home__useroccupation home__items">
                             <div class="contact__inputs">
                                 <label for="" class="contact__label"><i class="uil uil-bag"></i> occupation</label>
-                                <input type="text" name ="occupation" class="contact__input" value="<?php echo $home_row['occupation'];?>">
+                                <select name="occupation" class="" value="<?php echo $home_row['occupation'];?>">
+                                    <option>Frontend Developer</option>
+                                    <option>Backend Developer</option>
+                                    <option>SoftWare Developer</option>
+                                    <option>AI Developer</option>
+                                </select>
                             </div>
                         </div>
                     </div>
