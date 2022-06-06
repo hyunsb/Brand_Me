@@ -18,7 +18,7 @@
     bottom: 200px;
     right: 470px;
     
-    animation: up-down 2.0s infinite ease-in-out alternate;
+    animation: up-down 1.5s infinite ease-in-out alternate;
     transform: translate(0px, 0px);
 }
 
