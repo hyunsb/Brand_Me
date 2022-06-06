@@ -188,17 +188,17 @@
                         </div>
 
                         <div class="about__input grid">
-                            <div>
-                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i>Year Experience</label>
-                                <input type="number" name ="notion" class="input__link" value="<?php echo $about_row['experience'];?>">
+                            <div class="contact__inputs">
+                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> Year Experience</label>
+                                <input type="number" name ="notion" class="input__link_num" value="<?php echo $about_row['experience'];?>">
                             </div>
-                            <div>
-                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i>Completed Project Number</label>
-                                <input type="number" name ="notion" class="input__link" value="<?php echo $home_row['project'];?>">
+                            <div class="contact__inputs">
+                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> Completed Project Number</label>
+                                <input type="number" name ="notion" class="input__link_num" value="<?php echo $home_row['project'];?>">
                             </div>
-                            <div>
-                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i>Companies Worked</label>
-                                <input type="number" name ="notion" class="input__link" value="<?php echo $home_row['worked'];?>">
+                            <div class="contact__inputs">
+                                <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> Companies Worked</label>
+                                <input type="number" name ="notion" class="input__link_num" value="<?php echo $home_row['worked'];?>">
                             </div>
                         </div>
                     </div>
@@ -223,6 +223,7 @@
 
                 <div class="contact__container container grid">
                     <!-- <form method ="post" action="user_setting_check.php" class="skills__form grid"> -->
+                    <div class="skills_content_item">
                         <h1 class="skills__title"><i class="uil uil-brackets-curly skills__icon"></i> Frontend Developer</h1>
                         <div class="skills__sub grid">
                             <span>skills</span>
@@ -267,10 +268,11 @@
                                 <input name ="skills_front_per_4" type="text" class="skills__input" value="<?php echo $skills_frontend_row['skills_front_per_4'];?>">
                             </div>
                         </div> 
-
+                    </div>
                     <!-- </form> -->
 
                     <!-- <form method ="post" action="user_setting_check.php" class="contact__form grid"> -->
+                    <div class="skills_content_item">
                         <h1 class="skills__title"><i class="uil uil-server-network skills__icon"></i> Backend Developer</h1>
                         <div class="skills__sub grid">
                             <span>skills</span>
@@ -315,6 +317,7 @@
                                 <input name ="skills_back_per_4" type="text" class="skills__input" value="<?php echo $skills_backend_row['skills_back_per_4'];?>">
                             </div>
                         </div>
+                    </div>
                     <!-- </form> -->
                 </div>
             </section>
@@ -348,64 +351,61 @@
                 <h2 class="section__title">Services</h2>
                 <span class="section__subtitle">What i offer</span>
 
-                <div class="contact__container container grid">
+                <div class="service__container container grid">
+                    <div class="service_content_item">
                         <h1 class="skills__title"><i class="uil uil-brackets-curly skills__icon"></i> Frontend Developer</h1>
-                        <div class="skills__sub grid">
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="skills__skill grid">
+
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_front_1" type="text" class="skills__input" placeholder="I develop the user interface." value="<?php echo $services_row['services_front_1'];?>">
                             </div>
                         </div>
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_front_2" type="text" class="skills__input" value="<?php echo $services_row['services_front_2'];?>">
                             </div>
                         </div> 
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_front_3" type="text" class="skills__input" value="<?php echo $services_row['services_front_3'];?>">
                             </div>
                         </div> 
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_front_4" type="text" class="skills__input" value="<?php echo $services_row['services_front_4'];?>">
                             </div>
                         </div>
-
+                    </div>
+                    <div class="service_content_item">
                         <h1 class="skills__title"><i class="uil uil-server-network skills__icon"></i> Backend Developer</h1>
-                        <div class="skills__sub grid">
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="skills__skill grid">
+
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_back_1" type="text" class="skills__input" placeholder="I create ux element interactions." value="<?php echo $services_row['services_back_1'];?>">
                             </div>
                         </div>
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_back_2" type="text" class="skills__input" value="<?php echo $services_row['services_back_2'];?>">
                             </div>
                         </div> 
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_back_3" type="text" class="skills__input" value="<?php echo $services_row['services_back_3'];?>">
                             </div>
                         </div> 
 
-                        <div class="skills__skill grid">
+                        <div class=" grid">
                             <div class="skills__inputs">
                                 <input name ="services_back_4" type="text" class="skills__input" value="<?php echo $services_row['services_back_4'];?>">
                             </div>
                         </div>
+                    </div>
                 </div>
             </section>
 
@@ -427,20 +427,22 @@
 
                 <div class="contact__container container">
                     <!-- <form method ="post" action="user_setting_check.php" class="contact__form grid"> -->
+                    <div class="contact_input_Area">
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-phone"></i> Phone Number</label>
-                            <input name="phone" type="text" class="contact__input" value="<?php echo $contact_row['phone'];?>">
+                            <input name="phone" type="text" class="contact__input" placeholder="010-0000-0000" value="<?php echo $contact_row['phone'];?>">
                         </div>
 
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-envelope"></i> Email</label>
-                            <input name="email" type="text" class="contact__input" value="<?php echo $contact_row['email'];?>">
+                            <input name="email" type="text" class="contact__input" placeholder="example@gmail.com" value="<?php echo $contact_row['email'];?>">
                         </div>
 
                         <div class="contact__inputs">
                             <label for="" class="contact__label"><i class="uil uil-map-marker"></i> Location</label>
                             <input name="location" type="text" class="contact__input" value="<?php echo $contact_row['location'];?>">
                         </div>
+                    </div>
                     <!-- </form> -->
                 </div>
             </section>
