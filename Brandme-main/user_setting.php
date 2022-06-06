@@ -333,14 +333,86 @@
                     <div class="qualification__tabs">
                         <div class="qualification__button button--flex qualification__active" data-target='#education'>
                             <h1 class="skills__title"><i class="uil uil-graduation-cap qualification__icon"></i> Education</h1>
-                            
 
-                            
+                            <div class="qualification_input_Area">
+                                <div class="qualification_input grid">
+                                    <span>Years</span>
+                                    <span>Content</span>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" placeholder="2016" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" placeholder="성결대 컴공" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" placeholder="2022" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" placeholder="KG에듀원" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="qualification__button button--flex" data-target='#work'>
                             <h1 class="skills__title"><i class="uil uil-briefcase-alt qualification__icon"></i> Work</h1>
-                            
+
+                            <div class="qualification_input_Area">
+                                <div class="qualification_input grid">
+                                    <span>Years</span>
+                                    <span>Content</span>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" placeholder="2023" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" placeholder="Kakao" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" placeholder="" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" placeholder="" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+
+                                <div class="qualification_input grid">
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_1" type="text" class="skills__input" value="<?php echo $skills_backend_row['skills_back_1'];?>">
+                                    </div>
+
+                                    <div class="skills__inputs">
+                                        <input name ="skills_back_per_1" type="text" class="skills__input" value="<?php echo $skills_backend_row['skills_back_per_1'];?>">
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>

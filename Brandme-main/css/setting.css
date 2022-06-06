@@ -445,6 +445,19 @@ img {
    text-align: center;
  }
 
+ .qualification_input_Area {
+
+    margin-top: 1rem;
+    display: grid;
+    grid-template-rows: auto;
+    row-gap: .5rem;
+ }
+
+ .qualification_input {
+  grid-template-columns: 1fr 2fr;
+  column-gap: .5rem;
+ }
+
 
 /* =====================//// SERVICE ////==========================*/
 .service__container {
