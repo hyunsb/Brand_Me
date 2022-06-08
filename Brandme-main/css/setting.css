@@ -307,6 +307,26 @@ img {
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
+.setting_button {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+
+  margin: auto;
+
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__item > .setting {
+  font-weight: var(--font-medium);
+}
+
+.nav__item > .setting :hover {
+  color: #Fff;
+}
+
 /*==================== HOME ====================*/
 .home__container {
   align-items: center;

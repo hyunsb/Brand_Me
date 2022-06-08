@@ -110,7 +110,8 @@
                         <li class="nav__item">
                             <a href="user_setting_check.php" class="nav__link setting">
                                 <!-- DB user ID값으로 변경 -->
-                                <i class="uil uil-user nav__icon"></i> <input type="submit" value="done!"></input>
+                                <!-- <i class="uil uil-user nav__icon"></i> -->
+                                <input type="submit" value="done!" class="setting_button"></input>
                             </a>
                         </li>
                     </ul>
