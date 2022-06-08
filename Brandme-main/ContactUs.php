@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include "dbconn.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,9 +30,9 @@
                     <div class="nav_menu">
                         <a href="binary.php" class="nav_items">Portfolio</a>
                         <!-- php로 변경 -->
-                        <a href="Board.html" class="nav_items">Board</a>
-                        <a href="ContactUs.html" class="nav_items" style="color: #fff;">Contact Us</a>
-                        <a href="MyPage.html" class="nav_items">MyPage</a>
+                        <a href="Board.php" class="nav_items">Board</a>
+                        <a href="ContactUs.php" class="nav_items" style="color: #fff;">Contact Us</a>
+                        <a href="MyPage.php" class="nav_items">MyPage</a>
 
                         <?php
                             if (!isset($_SESSION['user_id'])) {

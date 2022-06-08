@@ -421,7 +421,9 @@ img {
   text-align: center;
 }
 
-
+.home__userinfo > .contact__inputs {
+  margin-bottom: 1rem;
+}
 
 
 

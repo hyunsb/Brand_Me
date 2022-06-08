@@ -139,6 +139,7 @@
                 <div class="home__container container">
                     <!-- <form method ="post" action="user_setting_check.php" class="skill__home grid"> -->
                     <div class="home__userinfo grid">
+                        
                         <div class="home__username home__items">
                             <div class="contact__inputs">
                                 <label for="" class="contact__label"><i class="uil uil-user"></i> Name</label>
@@ -200,6 +201,11 @@
                 <!-- <form method ="post" action="user_setting_check.php" class="about__form grid"> -->
                 <div class="about__container container grid">
                     <div class="home__userinfo">
+                        <div class="contact__inputs">
+                            <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> Image</label>
+                            <input name="about_img" id="" cols="0" rows="1" class="contact__input" type="file"></input>
+                        </div>
+
                         <div class="home__infomation home__items">
                             <div class="contact__inputs">
                                 <label for="" class="contact__label"><i class="uil uil-comment-alt-chart-lines"></i> information</label>

@@ -23,10 +23,9 @@
             <a href="home.php" class="nav__logo">Brand Me.</a>
             <div class="nav_menu">
                 <a href="binary.php" class="nav_items">Portfolio</a>
-                <!-- php로 변경 -->
-                <a href="Board.html" class="nav_items">Board</a>
-                <a href="ContactUs.html" class="nav_items">Contact Us</a>
-                <a href="MyPage.html" class="nav_items">MyPage</a>
+                <a href="Board.php" class="nav_items">Board</a>
+                <a href="ContactUs.php" class="nav_items">Contact Us</a>
+                <a href="MyPage.php" class="nav_items">MyPage</a>
 
                 <?php
                     if (!isset($_SESSION['user_id'])) {
@@ -47,14 +46,12 @@
         </nav>
     </div>
     <div class="main_home_Container">
-        
         <div class="section_img1">
             <img src="./img/section1_img2.png"/>
         </div>
         <div class="section_img2">
             <img src="./img/bubble_left2.svg" alt class="imgBubble"/>
             <img src="./img/bubble_right2.svg" alt class="imgBubble2"/>
-            <!-- <img src="./img/section1_img2R.png" alt class="footer_img"/> -->
             <div class="img_area">
                 <img src="./img/section1_img.png" alt class="imgPeople"/>
             </div>
@@ -107,7 +104,7 @@
             <p class="footer__copy">&#169; Brand ME. All right reserved</p>
         </div>
     </footer>
-
+    
     <!-- <div class="footer_img_Area">
         <img src="./img/section1_img2R.png" alt class="footer_img"/>
     </div> -->

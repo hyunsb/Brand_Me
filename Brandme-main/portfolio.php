@@ -2,51 +2,53 @@
     session_start();
     include "dbconn.php";
 
-    $id = $_SESSION['user_id'];
+    $id = $port_id;
 
     $sql = "SELECT user_name FROM userinfo WHERE user_id = '$id'";
     $result = mysql_query($sql, $connect);
     $row = mysql_fetch_array($result);
 
     //home
-    $home_select = "SELECT * FROM home WHERE user_id = '$user_id'";
+    $home_select = "SELECT * FROM home WHERE user_id = '$id'";
     $home_result = mysql_query($home_select, $connect);
     $home_row = mysql_fetch_array($home_result);
 
     // about
-    $about_select = "SELECT * FROM about WHERE user_id = '$user_id'";
+    $about_select = "SELECT * FROM about WHERE user_id = '$id'";
     $about_result = mysql_query($about_select, $connect);
     $about_row = mysql_fetch_array($about_result);
 
     // skills_frontend
-    $skills_frontend_select = "SELECT * FROM skills_frontend WHERE user_id = '$user_id'";
+    $skills_frontend_select = "SELECT * FROM skills_frontend WHERE user_id = '$id'";
     $skills_frontend_result = mysql_query($skills_frontend_select, $connect);
     $skills_frontend_row = mysql_fetch_array($skills_frontend_result);
 
     // skills_backend
-    $skills_backend_select = "SELECT * FROM skills_backend WHERE user_id = '$user_id'";
+    $skills_backend_select = "SELECT * FROM skills_backend WHERE user_id = '$id'";
     $skills_backend_result = mysql_query($skills_backend_select, $connect);
     $skills_backend_row = mysql_fetch_array($skills_backend_result);
 
     // qualification_edu
-    $qualification_edu_select = "SELECT * FROM qualification_edu WHERE user_id = '$user_id'";
+    $qualification_edu_select = "SELECT * FROM qualification_edu WHERE user_id = '$id'";
     $qualification_edu_result = mysql_query($qualification_edu_select, $connect);
     $qualification_edu_row = mysql_fetch_array($qualification_edu_result);
 
     // qualification_work
-    $qualification_work_select = "SELECT * FROM qualification_work WHERE user_id = '$user_id'";
+    $qualification_work_select = "SELECT * FROM qualification_work WHERE user_id = '$id'";
     $qualification_work_result = mysql_query($qualification_work_select, $connect);
     $qualification_work_row = mysql_fetch_array($qualification_work_result);
 
     // services
-    $services_select = "SELECT * FROM services WHERE user_id = '$user_id'";
+    $services_select = "SELECT * FROM services WHERE user_id = '$id'";
     $services_result = mysql_query($services_select, $connect);
     $services_row = mysql_fetch_array($services_result);
 
     // contact
-    $contact_select = "SELECT * FROM contact WHERE user_id = '$user_id'";
+    $contact_select = "SELECT * FROM contact WHERE user_id = '$id'";
     $contact_result = mysql_query($contact_select, $connect);
     $contact_row = mysql_fetch_array($contact_result);
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +80,7 @@
                     <ul class="nav__list grid">
                         <li class="nav__item">
                             <a href="#home" class="nav__link active-link">
-                                <i class="uil uil-estate nav__icon"></i> Home 
+                                <i class="uil uil-estate nav__icon"></i> Home
                             </a>
                         </li>
                         <li class="nav__item">
@@ -104,17 +106,6 @@
                         <li class="nav__item">
                             <a href="#contactme" class="nav__link">
                                 <i class="uil uil-message nav__icon"></i> Contactme
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="user_setting.php" class="nav__link setting">
-                                <!-- DB user ID값으로 변경 -->
-                                <i class="uil uil-user nav__icon"></i> UserSetting
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="logout.php" class="nav__link setting">
-                                <i class="uil uil-user nav__icon"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -161,9 +152,9 @@
 
                         <div class="home__data">
                             <!-- DB 입력값 변수로 변경할 것 -->
-                            <h1 class="home__title">Hi, 
+                            <h1 class="home__title">Hi, I'm 
                                 <?php
-                                    echo $row['user_name'];
+                                    echo $home_row['user_name'];
                                 ?>
                             </h1>
                             <h3 class="home__subtitle"><?php 
@@ -841,6 +832,8 @@
 
                     <form action="contactme.php" method="post" class="contact__form grid">
                         <div class="contact__inputs grid">
+                            <input type='hidden' name='portfolio_id' value='<?php echo$id?>'/>
+                            <input type='hidden' name='contactme_id' value='<?php echo$_SESSION['user_id']?>'/>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Name</label>
                                 <input type="text" name="contactme_name" class="contact__input">

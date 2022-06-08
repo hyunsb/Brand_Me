@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF8">
+</head>
+</html>
+
 <?php
     session_start();
     include "dbconn.php";
@@ -12,7 +19,7 @@
         echo "
             <script>
                 window.alert('로그인 후 이용해 주세요.')
-                history.go(-1)
+                location.replace('home.php');
             </script>
             ";
     } else {
