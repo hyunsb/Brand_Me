@@ -43,6 +43,16 @@
             $skills_frontend_result = mysql_query($skills_frontend_select, $connect);
             $skills_frontend_row = mysql_fetch_array($skills_frontend_result);
 
+            // qualification_edu
+            $qualification_edu_select = "SELECT * FROM qualification_edu WHERE user_id = '$user_id'";
+            $qualification_edu_result = mysql_query($qualification_edu_select, $connect);
+            $qualification_edu_row = mysql_fetch_array($qualification_edu_result);
+
+            // qualification_work
+            $qualification_work_select = "SELECT * FROM qualification_work WHERE user_id = '$user_id'";
+            $qualification_work_result = mysql_query($qualification_work_select, $connect);
+            $qualification_work_row = mysql_fetch_array($qualification_work_result);
+
             // services
             $services_select = "SELECT * FROM services WHERE user_id = '$user_id'";
             $services_result = mysql_query($services_select, $connect);
@@ -54,7 +64,7 @@
             $contact_row = mysql_fetch_array($contact_result);
 
         ?>
-        <form action="user_setting_check.php" method="post" >
+        <form action="user_setting_check.php" method="post" enctype="multipart/form-data">
         <!-- ===========================//// HEADER ////================================= -->
         <header class="header" id="header">
             <!-- ===========================//// NAV ////================================= -->
@@ -78,6 +88,11 @@
                             </a>
                         </li>
                         <li class="nav__item">
+                            <a href="#qualification" class="nav__link">
+                                <i class="uil uil-file-alt nav__icon"></i> Qualification
+                            </a>
+                        </li>
+                        <li class="nav__item">
                             <a href="#services" class="nav__link">
                                 <i class="uil uil-briefcase-alt nav__icon"></i> Services
                             </a>
@@ -94,7 +109,8 @@
                         </li>
                         <li class="nav__item">
                             <a href="user_setting_check.php" class="nav__link setting">
-                                <input type="submit" text>Done</input>
+                                <!-- DB user ID값으로 변경 -->
+                                <i class="uil uil-user nav__icon"></i> <input type="submit" value="done!"></input>
                             </a>
                         </li>
                     </ul>
