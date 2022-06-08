@@ -17,7 +17,7 @@
 
     $board_select = "SELECT * FROM board WHERE board_occupation LIKE '$search%'";
     $board_result = mysql_query($board_select, $connect);
-    $board_num_match = mysql_num_rows($board_result);
+    // $board_num_match = mysql_num_rows($board_result);
 ?>
 
 <!DOCTYPE html>
@@ -91,34 +91,15 @@
         <div class="Board_Content_Container">
             <div class="Board_Content_Area">
                 <!-- 검색한 포트폴리오 검색 -->
-                <?php
-                    while($board_row = mysql_fetch_row($board_result)) {
-                        $portfolio_id = $board_row[1];
-                        $portfolio_name = $board_row[2];
-                        $portfolio_occupation = $board_row[3];
+                <div class='Board_Test'>
+                    <h1 class="Board_icon"><i class="uil uil-user" class="Board_icon"></i></h1>
+                    <h3 class="Board_name">$portfolio_name</h3>
+                    <h3 class="Board_occ">$portfolio_occupation</h3>
+                    <h3 class="Board_id">$portfolio_id</h3>
+                    <a href='portfolio.php?port_id=$portfolio_id'>입장</a>
+                </div>
 
-                        echo "
-                            <div class='Board_Test'>
-                                <h3>$portfolio_id</h3>
-                                <h3>$portfolio_name</h3>
-                                <h3>$portfolio_occupation</h3>
-                                <a href='portfolio.php?port_id=$portfolio_id'>입장</a>
-                            </div>
-                        ";
-                    }
-                    $board_row = mysql_fetch_row($board_result);
-                ?>
-                <script>
-                    function othersubmit(n) {
-                        if(n==1) {
-                            document.otherform.action="<?php echo $_SERVER['PHP_SELF'];?>";
-                        }
-                        if(n==2) {
-                            document.otherform.action="portfolio.php";
-                        }
-                        document.otherform.submit();
-                    }
-                </script>
+
             </div>
         </div>
     </div>
