@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 컬러, 폰트 변수 setting */
+:root {
+    --header-height: 3rem;
+
+    /* 사용자 값에 따라 변경 가능하도록 */
+
+    /* HSL 색삭표 참고 사이트
+    https://www.w3schools.com/colors/colors_hsl.asp
+    purple 250, green 142, blue 230 pink 340 */
+
+    --hue-color: 250;
+
+    /* -----------------HSL color 변수------------------ */
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #FFF;
+
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /* --------------------Font size 변수-------------------- */
+    
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+
+    /* Font weight */
+   
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /* --------------------Margin 변수-------------------- */
+   
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /* -------------------z-index 변수-------------------- */
+   
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+
+/* 반응형 스크린 기본 setting */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+  }
+}
+
+/*==================== BASE ====================*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    /* 스크롤 이동 부드럽게 */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* margin: 0 0 var(--header-height) 0; */
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    /* background: url("../img/section1_img2.png") center; */
+    /* background-size: cover; */
+
+    -ms-overflow-style: none;
+  }
+  
+ ::-webkit-scrollbar {
+   display: none;
+ }
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+ul {
+    /* 리스트 스타일 없음 */
+    list-style: none;
+}
+
+a {
+    /* a 태그 문자 밑줄 삭제 */
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 768px;
+    margin-left: var(--mb-1-5);
+    margin-right: var(--mb-1-5);
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+
+
+
+
+.firstCon_Container{
+    background-color: #2B0D4B;
+    height: 100vh;
+    position: relative;
+}
+
+.section1_img2 {
+    position: absolute;
+    top: -60px;
+    z-index: 1;
+}
+
+.section1_img2R {
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+.purple {
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    background-color: #2B0D4B;
+}
+
+.purple2 {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+
+    bottom: 0;
+    background-color: #2B0D4B;
+}
+
+.firstCon_Content {
+    position: absolute;
+    z-index: 3;
+
+    top: 15vh;
+    right: 15vw;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    width: 70%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    height: 70vh;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.Content_Area > h1 {
+
+    /* font-family: yg-jalnan; */
+    margin-top: 1rem;
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+    color: #2B0D4B;
+
+    animation: fadein 1s ease-in-out;
+
+    text-align: center;
+}
+
+.content_Content {
+    display: flex;
+    justify-content: center;
+    /* opacity: 0; */
+    animation: fadein_delay 2s ease-in-out;
+    
+}
+
+.content_Content > h1{
+    font-family: yg-jalnan;
+    text-align: center;
+}
+
+.text_purple {
+    color: #551c91;
+}
+
+@keyframes fadein {
+  0% {
+    /* animation-delay:1s; */
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadein_delay {
+    0% {
+      opacity: 0;
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes fadein_delay2 {
+    0% {
+      opacity: 0;
+    }
+    75% {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+
+.Content_btn_Area {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+
+    animation: fadein_delay 3s ease-in-out;
+}
+
+.Content_btn_Area > a {
+    font-size: 25px;
+    padding: .5rem 10rem;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+
+    background-color: #551c91;
+    color: #FFF;
+}
