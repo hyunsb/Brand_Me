@@ -14,8 +14,11 @@
         <!-- CSS -->
         <link rel="stylesheet" href="./css/homestyle.css">
 
-    <!-- UNICONS -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <!-- UNICONS -->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+        <!-- SWIPER CSS -->
+        <link rel="stylesheet" href="./css/swiper-bundle.min.css">
 </head>
 <body>
     <div class="main_Header_Container">
@@ -78,6 +81,43 @@
                     <h1>포트폴리오를 제작하세요!</h1>
                 </div>
             </div>
+
+
+            <!-- ===========================//   미리보기    //================================= -->
+            <section class="portfolio section" id="portfolio">
+                <!-- <h2 class="section__title">Portfolio</h2>
+                <span class="section__subtitle">Most recent work</span> -->
+
+                <div class="portfolio__container container swiper">
+                    <div class="swiper-wrapper">
+                        <!-- ===========================//// PROTFOLIO 1 ////================================= -->
+                        <div class="guide_Content grid swiper-slide">
+                            <!-- DB 입력값 변수로 변경할 것 -->
+                            <img src="./img/pre1.png" alt="" class="guide_img">
+                        </div>
+
+                        <!-- ===========================//// PROTFOLIO 2 ////================================= -->
+                        <div class="guide_Content grid swiper-slide">
+                            <img src="./img/pre2.png" alt="" class="guide_img">
+                        </div>
+
+                        <!-- ===========================//// PROTFOLIO 3 ////================================= -->
+                        <div class="guide_Content grid swiper-slide">
+                            <img src="./img/pre3.png" alt="" class="guide_img">
+                        </div>
+
+
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next">
+                    </div>
+                    <div class="swiper-button-prev">
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
         </div>
     </div>
 
@@ -104,11 +144,25 @@
             <p class="footer__copy">&#169; Brand ME. All right reserved</p>
         </div>
     </footer>
-    
-    <!-- <div class="footer_img_Area">
-        <img src="./img/section1_img2R.png" alt class="footer_img"/>
-    </div> -->
+
 
     <script src="./js/swiper-bundle.min.js"></script>
+        <script>
+            var mySwiper = new Swiper ('.swiper', {
+                cssMode: true,
+                loop : true,
+
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable : true,
+                },
+                mousewheel: true,
+                keyboard: true,
+            });            
+        </script>
 </body>
 </html>

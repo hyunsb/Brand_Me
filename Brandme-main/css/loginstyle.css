@@ -302,6 +302,26 @@ body::before {
 
 .Forgot_ContentArea {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
+    justify-content: center;
+}
+
+.forgot_logo {
+    margin-bottom: 2rem;
+}
+
+
+.forgot_logo > h1 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 500;
+    color: #5b00d3;
+    /* text-shadow: 0px 0px 80px rgba(0, 0, 0), 0px 0px 40px rgb(0, 0, 0), 0px 0px 10px rgb(255, 255, 255); */
+
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.404);
+    caret-color: #cbcbcb;
+    outline: none;
+}
+
+.forgot_logo > h1:last-child {
+    font-size: 40px;
 }

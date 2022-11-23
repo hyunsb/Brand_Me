@@ -227,11 +227,6 @@ img {
     justify-content: center;
     /* opacity: 0; */
     animation: fadein_delay 2s ease-in-out;
-    /* transition: all 0.6s ease-in-out 0s;
-    transition-property: all;
-    transition-duration: 0.6s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s; */
     
 }
 

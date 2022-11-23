@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF8">
-</head>
-</html>
-
 <?php
             session_start();
             include "dbconn.php";   // db 연결
@@ -31,12 +24,12 @@
                 $db_pass = $row['user_pw'];
 
                 if($pw != $db_pass) {
-                    echo("
+                    echo"
                         <script>
-                            window.alert('비밀번호가 틀립니다.')
+                            window.alert('비밀번호가 일치하지 않습니다.')
                             history.go(-1)
                         </script>
-                    ");
+                    ";
 
                     exit;
                 } else {
@@ -57,3 +50,12 @@
    
             mysql_close();
         ?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF8">
+</head>
+<body>
+</body>
+</html>

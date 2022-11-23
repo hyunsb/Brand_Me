@@ -20,7 +20,6 @@
 
     $select_contactme = "SELECT * FROM contactme WHERE user_id = '$user_id'";
     $contactme_result = mysql_query($select_contactme, $connect);
-    $contactme_row = mysql_fetch_array($contactme_result);
 ?>
 
 <!DOCTYPE html>
@@ -103,11 +102,19 @@
                             <h2><?php echo$row['user_id']?></h2>
                         </div>
 
+                        <form method="post" action="change_pw.php">
                         <div class="userInfo_items">
                             <h2>PW</h2>
-                            <h2><?php echo$row['user_pw']?></h2>
+                            <div class="userInfo_items_pw_area">
+                                <input type="text" name="user_pw" value="<?php echo$row['user_pw']?>" class="userInfo_PW"/>
+                                <input type="submit" value="변경" class="change_pw_btn"/>
+                            </div>
                         </div>
+                        </form>
                     </div>
+                </div>
+                <div class="user_del_Area">
+                    <a class="user_del" href="delete_user.php">회원탈퇴</a>
                 </div>
             </div>
 
@@ -117,10 +124,27 @@
             <div class="mypage_UserContent_Area">
                 <div class="UserContent_Container">
                     <?php
-                        echo "
-                        {$contactme_row['contactme_user_id']}, {$contactme_row['contactme_name']},
-                        {$contactme_row['contactme_email']}, {$contactme_row['contactme_title']}, {$contactme_row['contactme_message']}
-                        ";
+                        while($contactme_row = mysql_fetch_row($contactme_result)) {
+                            $contactme_user_id = $contactme_row[2];
+                            $contactme_name = $contactme_row[3];
+                            $contactme_email = $contactme_row[4];
+                            $contactme_title = $contactme_row[5];
+                            $contactme_message = $contactme_row[6];
+    
+                            echo "
+                                <div class='mypage_Contact_Area'>
+                                    <div class='mypage_Contact_Info'>
+                                        <h3 class='Contact_Info_Name'><i class='uil uil-user' class='Board_icon'> $contactme_name</i></h3>
+                                        <h3 class='Contact_Info_id'>$contactme_user_id</h3>
+                                        <h3 class='Contact_Info_email'>$contactme_email</h3>
+                                    </div>
+                                    <div class='mypage_Contact_Content'>
+                                        <h3 class='Contact_Content_Title'>$contactme_title</h3>
+                                        <h3 class='Contact_Content_Content'>$contactme_message</h3>
+                                    </div>
+                                </div>
+                            ";
+                        }
                     ?>
                 </div>
             </div>

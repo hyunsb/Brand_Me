@@ -73,7 +73,7 @@
 
     display: grid;
     grid-template-rows: 1fr .7fr;
-   justify-items: center;
+    justify-items: center;
 }
 
 .mypage_border_Area {
@@ -83,13 +83,15 @@
 
 .mypage_UserContent_Area {
     padding: 1rem;
+
+    overflow: scroll;
 }
 
 .UserContent_Container {
     width: 100%;
-    height: 100%;
+    height: max-content;
     border-radius: 20px;
-    background-color: rgba(43, 13, 75, 0.268);
+    /* background-color: rgba(43, 13, 75, 0.268); */
 }
 
 
@@ -122,6 +124,9 @@
     display: grid;
     grid-template-columns: 1fr 3fr;
 
+    justify-items: center;
+    justify-content: center;
+
     /* padding: 0 1rem; */
     text-align: center;
     padding: .5rem .5rem;
@@ -138,4 +143,92 @@
 
 .userInfo_items > h2:first-child {
     color: rgb(74, 74, 74);
+}
+
+.mypage_Contact_Area {
+    width: 100%;
+    /* padding: 1rem; */
+    height: fit-content;
+    border-radius: 20px;
+    background-color: rgba(43, 13, 75, 0.268);
+
+    margin-bottom: 1rem;
+}
+
+.mypage_Contact_Info {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr auto;
+    padding: 0.2rem 1rem;
+
+    width: 100%;
+    background-color: #6222a5;
+    border-radius: 10px 10px 0 0;
+}
+
+.mypage_Contact_Info > h3 {
+    color: #fff;
+}
+
+.mypage_Contact_Info > .Contact_Info_Name {
+    font-style: normal;
+}
+
+.mypage_Contact_Info > .Contact_Info_id {
+    font-size: 15px;
+    line-height: 30px;
+    color: rgb(156, 156, 156);
+}
+
+.mypage_Contact_Content {
+    padding: 1rem;
+}
+
+.Contact_Content_Title {
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.Contact_Content_Content {
+    font-size: 15px;
+    text-align: center;
+}
+
+.userInfo_items_pw_area {
+    display: flex;
+}
+
+.userInfo_PW {
+    text-align: center;
+    padding: .5rem .5rem;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+
+    border: none;
+    outline: none;
+
+    width: 100%;
+    height: 100%;
+    
+    font-family: GmarketSansMedium;
+}
+
+.change_pw_btn {
+    background-color: #2B0D4B;
+    color: #fff;
+    border-radius: 10px;
+    width: 60px;
+}
+
+.user_del_Area {
+    width: 100%;
+    text-align: end;
+}
+
+.user_del {
+    color: #2B0D4B;
+
+    text-decoration: none;
+    width: 100%;
+    text-align: end;
+    padding-right: 1.5rem;
 }

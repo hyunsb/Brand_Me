@@ -375,12 +375,15 @@ img {
 
 /*==================== FOOTER ====================*/
 .footer {
+    position: relative;
+    overflow: hidden;
     padding-top: 2rem;
     background-color: #2b0d4b60;
   }
   
   .footer__container {
     row-gap: 3.5rem;
+    z-index: 1;
   }
   
   .footer__bg {
@@ -431,20 +434,97 @@ img {
     position: absolute;
     /* z-index: -1; */
     /* z-index: 0; */
+
+
     left: 0;
-    top: 500px;
+    bottom: 0;
   }
 
-  /* .footer_img_Area {
-    position: relative;
+  .footer_img_Area {
+    position: absolute;
     background-color: #2B0D4B;
+    z-index: 0;
 
     border-radius: 100px 0 0 0;
 
 
     width: 2000px;
     height: 150px;
-  } */
+  }
+
+  /*==================== PORTFOLIO ====================*/
+  .portfolio__container {
+    overflow: initial;
+    margin-bottom: 5rem;
+  }
+  
+  .portfolio__content {
+    padding: 0 1.5rem;
+  }
+  
+  .portfolio__img {
+    width: 265px;
+    border-radius: .5rem;
+    justify-self: center;
+  }
+  
+  .portfolio__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+  }
+  
+  .portfolio__description {
+    margin-bottom: var(--mb-0-75);
+  }
+  
+  .portfolio__button:hover .button__icon {
+    transform: translateX(0.25rem);
+  }
+  
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    content: '';
+  }
+  
+  .swiper-portfolio-icon {
+    font-size: 2rem;
+    color: var(--first-color);
+  }
+  
+  .swiper-button-prev {
+    left: -.5rem;
+  }
+  
+  .swiper-button-next {
+    right: -.5rem;
+  }
+  
+  .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom: -2.5rem;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: var(--first-color);
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next,
+  .swiper-pagination-bullet {
+    outline: none;
+  }
+
+
+.guide_Content {
+  justify-content: center;
+}
+  
+
+
+
+
+
+
+
 
   /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
@@ -714,4 +794,7 @@ img {
   }
 
 
-
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2B0D4B;
+}

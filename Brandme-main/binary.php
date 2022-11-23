@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF8">
-</head>
-</html>
-
 <?php
     session_start();
     include "dbconn.php";
@@ -44,6 +37,12 @@
 
         
     }
-
-
 ?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF8">
+</head>
+<body>
+</body>
+</html>

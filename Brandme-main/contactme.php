@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF8">
-</head>
-<body>
-</body>
-</html>
-
 <?php
     session_start();
     include "dbconn.php";   // db 연결
@@ -31,3 +22,11 @@
 
     mysql_close();
 ?>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF8">
+</head>
+<body>
+</body>
+</html>

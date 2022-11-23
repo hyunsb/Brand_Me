@@ -92,6 +92,11 @@
                             </a>
                         </li>
                         <li class="nav__item">
+                            <a href="#qualification" class="nav__link">
+                                <i class="uil uil-file-alt nav__icon"></i> Qualification
+                            </a>
+                        </li>
+                        <li class="nav__item">
                             <a href="#services" class="nav__link">
                                 <i class="uil uil-briefcase-alt nav__icon"></i> Services
                             </a>
@@ -161,7 +166,7 @@
 
                         <div class="home__data">
                             <!-- DB 입력값 변수로 변경할 것 -->
-                            <h1 class="home__title">Hi, 
+                            <h1 class="home__title">Hi, I'm 
                                 <?php
                                     echo $row['user_name'];
                                 ?>
@@ -414,7 +419,7 @@
 
 
             <!-- ===========================//// QUALIFICATION ////================================= -->
-            <section class="qualification section">
+            <section class="qualification section" id="qualification">
                 <h2 class="section__title">Qualification</h2>
                 <span class="section__subtitle">My persnal journey</span>
 
