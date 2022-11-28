@@ -6,11 +6,15 @@
 
 다른 유저의 포트폴리오를 참고 및 상호 연락 할 수 있는 플랫폼입니다.
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=Python&logoColor=white">
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=Python&logoColor=white">
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=Python&logoColor=white">
-<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=Python&logoColor=white">
-<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=Python&logoColor=white">
+<div>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
+</div>
+<div>
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=PHP&logoColor=white">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+</div>
 
 ## 📌**MainPage (메인 페이지)**
 
