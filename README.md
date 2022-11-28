@@ -6,6 +6,9 @@
 
 다른 유저의 포트폴리오를 참고 및 상호 연락 할 수 있는 플랫폼입니다.
 
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=Python&logoColor=white">
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=Python&logoColor=white">
+<img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=Python&logoColor=white">
 <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=Python&logoColor=white">
 
 ## 📌**MainPage (메인 페이지)**
